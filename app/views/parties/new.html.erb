@@ -1,10 +1,13 @@
 <h1> New Party </h1>
 
-<%= form_with model: @party do |f| %>
+<%= form_for @party do |f| %>
     <%= f.label :name %>:
     <%= f.text_field :name %>
 
     <%= f.date_field :date %><br>
+
+    <%= f.label :category %>
+    <%= f.text_field :category_name %>
 
     <%= f.radio_button :private, true %>
     <%= f.label :private %><br>

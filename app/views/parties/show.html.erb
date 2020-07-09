@@ -1,9 +1,6 @@
 <h1> <%= @party.name %> </h1>
 <h3> <%= @party.date %> </h3>
 <p>Budget: $<%= @party.budget %></p>
+<p>Category: <%= @party.category_name %></p>
 
-<% if @party.private %>
-    <p><i>Private Party</i></p>
-<% else %>
-     <p><i>Public Party</i></p>
-<% end %>
+<p><i><%= @party.private_or_public%> Party</i></p>
