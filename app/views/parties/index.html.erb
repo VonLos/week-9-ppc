@@ -2,6 +2,6 @@
 
 <ul>
     <% @parties.each do |p| %>
-        <li><%= p.name %> - <%= p.date %></li>
+        <li><%= link_to p.name, party_path(p) %> - <%= p.date %></li>
     <% end %>
 </ul>
