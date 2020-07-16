@@ -9,6 +9,7 @@ class PartiesController < ApplicationController
 
     def new
         @party = Party.new
+        3.times {@party.parties_supplies.build}
     end
 
     def create
@@ -18,6 +19,6 @@ class PartiesController < ApplicationController
 
     private
     def party_params
-        params.require(:party).permit(:name, :date, :private, :category_name)
+        params.require(:party).permit(:name, :date, :private, :category_name, :parties_supplies_attributes => [:supply_id, :quantity])
     end 
 end

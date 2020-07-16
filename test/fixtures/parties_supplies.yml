@@ -1,0 +1,11 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  supply: one
+  party: one
+  quantity: 1
+
+two:
+  supply: two
+  party: two
+  quantity: 1

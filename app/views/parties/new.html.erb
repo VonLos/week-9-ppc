@@ -13,6 +13,10 @@
     <%= f.label :private %><br>
     <%= f.radio_button :private, false %>
     <%= f.label :public %><br>
-
+    <%= f.fields_for :parties_supplies do |s| %>
+        <%= s.collection_select :supply_id, Supply.all, :id, :name %>
+        <%= s.label :quantity %>
+        <%= s.text_field :quantity %><br>
+    <% end %>
     <%= f.submit %>
 <% end %>

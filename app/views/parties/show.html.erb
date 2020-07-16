@@ -4,3 +4,7 @@
 <p>Category: <%= @party.category_name %></p>
 
 <p><i><%= @party.private_or_public%> Party</i></p>
+
+<% @party.parties_supplies.each do |p_s| %>
+    <%= p_s.name %> <%= p_s.quantity %><br>
+<% end %>
