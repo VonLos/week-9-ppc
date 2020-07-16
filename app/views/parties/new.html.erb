@@ -14,9 +14,15 @@
     <%= f.radio_button :private, false %>
     <%= f.label :public %><br>
     <%= f.fields_for :parties_supplies do |s| %>
-        <%= s.collection_select :supply_id, Supply.all, :id, :name %>
+        <%= s.fields_for :supply do |t|  %>
+            <%= t.label :name, 'Add new supply:' %>
+            <%= t.text_field :name %>
+
+        <%end%>
+        <%= s.collection_select :supply_id, Supply.all, :id, :name,  prompt: true%>
         <%= s.label :quantity %>
         <%= s.text_field :quantity %><br>
+        
     <% end %>
     <%= f.submit %>
 <% end %>
